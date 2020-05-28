@@ -11,7 +11,12 @@ let mix = require('laravel-mix');
  |
  */
 
-// mix.js('src/app.js', 'dist/').sass('src/app.scss', 'dist/');
+mix.copy('./src/index.html', './dist')
+    .react('./src/index.js', './dist/js')
+    .postCss('./src/index.css', 'dist/css', [
+        require('tailwindcss'),
+    ])
+
 
 // Full API
 // mix.js(src, output);
